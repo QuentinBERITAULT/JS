@@ -40,9 +40,51 @@ function nbOccurences(wordList, word){
     let number = 0;
     let tab = wordList.split(" ");
     for(let i = 0; i < tab.length; i++){
-        if(value === word){
+        if(tab[i] === word){
             number++;
         }
     }
     return number;
+}
+
+function flatten2D(array){
+    let tab = [];
+    let size = array.length;
+    for(let i = 0; i < size; i++){
+        for(let j = 0; j < array[i].length; j++){
+            tab.push(array[i][j]);
+        }
+    }
+    return tab;
+}
+
+
+function name(nameList,addName){
+    for(let i = 0; i < nameList.length; i++){
+        console.log(nameList[i]);
+    }
+    nameList.pop();
+    nameList.push(addName);
+    return nameList;    
+}
+
+function multiplication(){
+    let tab = [];
+    for(let i = 0; i <= 9; i++){
+        console.log("Table de multiplication de " + i + " :");
+        for(let j = 0; j <= 10; j++){
+            tab[j] = j*i;
+        }
+        printTab(tab);
+        console.log("");
+    }
+}
+
+function printTab(tab){
+    let chaine = "";
+    for(let value of tab){
+        chaine += value;
+        chaine += " ";
+    }
+    console.log(chaine);
 }
